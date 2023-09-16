@@ -11,4 +11,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="7.0.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MgTechBiz.TikTok.ContentPosting.Helpers\MgTechBiz.TikTok.ContentPosting.Helpers.csproj" />
+  </ItemGroup>
+
 </Project>
