@@ -1,17 +1,49 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+	ViewData["Title"] = "Home page";
 }
 
-<form enctype="multipart/form-data" method="post">
-	<dl>
-		<dt>
-			<label asp-for="FileUpload.FormFile"></label>
-		</dt>
-		<dd>
-			<input asp-for="FileUpload.FormFile" type="file">
-		</dd>
-	</dl>
-	<input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload">
-</form>
+<div class="row">
+
+	<form asp-page-handler="Token">
+		<button class="btn btn-outline-primary btn-lg">Get Token</button>
+	</form>
+</div>
+<hr/>
+
+<div class="row">
+	<div class="col-4">
+		<h4> Token</h4>
+	</div>
+	<div class="col-8">
+		@if (Model.Token != null)
+		{
+			<code>
+				@Json.Serialize(Model.Token);
+			</code>
+
+		}
+		else
+		{
+			<code>NULL</code>
+		}
+	</div>
+
+</div>
+<hr/>
+
+<div class="row">
+	<form enctype="multipart/form-data" method="post">
+		<dl>
+			<dt>
+				<label asp-for="FileUpload.FormFile"></label>
+			</dt>
+			<dd>
+				<input asp-for="FileUpload.FormFile" type="file">
+			</dd>
+		</dl>
+		<input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload">
+	</form>
+</div>
+

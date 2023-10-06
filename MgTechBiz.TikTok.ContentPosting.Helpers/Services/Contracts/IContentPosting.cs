@@ -13,4 +13,5 @@ public interface IContentPosting
     Task<HttpStatusCode> UploadFile(Stream file, Uri uploadUri);
 
     Task<StatusResponseDto> CheckStatus(StatusRequestDto  statusRequestDto);
+    Task<TokenResponseDto> GetToken(string clientKey, string clientSecret, string code, string redirectUri);
 }

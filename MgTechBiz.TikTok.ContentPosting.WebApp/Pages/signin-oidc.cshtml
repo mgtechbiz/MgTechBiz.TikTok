@@ -1,0 +1,16 @@
+﻿@page
+@model MgTechBiz.TikTok.ContentPosting.WebApp.Pages.signin_oidcModel
+@{
+}
+
+@if (Model.Error != null)
+{
+	<h1 class="text-danger">Error.</h1>
+	<h2 class="text-danger">An error occurred while getting the token.</h2>
+
+	<p>
+		<strong>Error:</strong> <code>@Model.Error</code>
+		<strong>Description:</strong> <code>@Model.ErrorDescription</code>
+	</p>
+}
+
